@@ -54,7 +54,7 @@ else
 fi
 
 case "$CHOICE" in
- 1) cd hello_world; ./hello_world.bin;echo"wait for 10s"; sleep 10; cd ..;;
+ 1) cd hello_world; ./hello_world.bin; echo "wait for 10s"; sleep 10; cd ..;;
  2) note; cd hello_audio; ./hello_audio.bin; cd ..;;
  3) note; cd hello_font; ./hello_font.bin; cd ..;;
  4) cd hello_video; ./hello_video.bin test.h264; cd ..;;
