@@ -2,6 +2,8 @@
 
 note() { whiptail --title "NOTE" --msgbox "USE ctrl+c TO END DEMO(s)" 8 0
 }
+fil() { FILN=$(whiptail --inputbox "Enter File Name" 8 0 --title "File" 3>&1 1>&2 2>&3)
+}
 
 echo "Welcome To DEMO_PI v1"
 
@@ -64,9 +66,9 @@ case "$CHOICE" in
  8) note; cd hello_videocube; ./hello_videocube.bin; cd ..;;
  9) note; cd hello_teapot; ./hello_teapot.bin; cd ..;;
  10) cd hello_dispmanx; ./hello_dispmanx.bin; cd ..;;
- 11) cd hello_encode; ./hello_encode.bin; cd ..;;
- 12) cd hello_fft; ./hello_fft.bin; cd ..;;
- 13) cd hello_jpeg; ./hello_jpeg.bin; cd ..;;
+ 11) fil; cd hello_encode; ./hello_encode.bin $FILN; cd ..;;
+ 12) fil; cd hello_fft; ./hello_fft.bin $FILN; cd ..;;
+ 13) fil; cd hello_jpeg; ./hello_jpeg.bin $FILN; cd ..;;
  "EXIT") exit 0;;
 esac
 done
