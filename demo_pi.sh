@@ -15,7 +15,8 @@ else
 fi
 
 whiptail --title "NOTE" --msgbox "USE ctrl+c TO END DEMOs" 8 0
-
+# Add trap for Ctrl-C
+trap echo INT
 while true; do
 if [ $ADV -eq 1 ]; then
   CHOICE=$(whiptail --title "Menu example" --menu "Choose an option" 20 0 16 \
