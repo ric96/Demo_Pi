@@ -1,6 +1,9 @@
 #!/bin/sh
 
-echo "Welcome To DEMO_PI v0.0.1"
+note() { whiptail --title "NOTE" --msgbox "USE ctrl+c TO END DEMO(s)" 8 0
+}
+
+echo "Welcome To DEMO_PI v1"
 
 cd /opt/vc/src/hello_pi #change directory to demo directory
 
@@ -14,7 +17,6 @@ else
     ADV=$?
 fi
 
-whiptail --title "NOTE" --msgbox "USE ctrl+c TO END DEMOs" 8 0
 # Add trap for Ctrl-C
 trap echo INT
 while true; do
@@ -52,15 +54,15 @@ else
 fi
 
 case "$CHOICE" in
- 1) cd hello_world; ./hello_world.bin; cd ..;;
- 2) cd hello_audio; ./hello_audio.bin; cd ..;;
- 3) cd hello_font; ./hello_font.bin; cd ..;;
+ 1) cd hello_world; ./hello_world.bin;echo"wait for 10s"; sleep 10; cd ..;;
+ 2) note; cd hello_audio; ./hello_audio.bin; cd ..;;
+ 3) note; cd hello_font; ./hello_font.bin; cd ..;;
  4) cd hello_video; ./hello_video.bin test.h264; cd ..;;
- 5) cd hello_tiger; ./hello_tiger.bin; cd ..;;
- 6) cd hello_triangle2; ./hello_triangle2.bin; cd ..;;
- 7) cd hello_triangle; ./hello_triangle.bin; cd ..;;
- 8) cd hello_videocube; ./hello_videocube.bin; cd ..;;
- 9) cd hello_teapot; ./hello_teapot.bin; cd ..;;
+ 5) note; cd hello_tiger; ./hello_tiger.bin; cd ..;;
+ 6) note; cd hello_triangle2; ./hello_triangle2.bin; cd ..;;
+ 7) note; cd hello_triangle; ./hello_triangle.bin; cd ..;;
+ 8) note; cd hello_videocube; ./hello_videocube.bin; cd ..;;
+ 9) note; cd hello_teapot; ./hello_teapot.bin; cd ..;;
  10) cd hello_dispmanx; ./hello_dispmanx.bin; cd ..;;
  11) cd hello_encode; ./hello_encode.bin; cd ..;;
  12) cd hello_fft; ./hello_fft.bin; cd ..;;
@@ -68,4 +70,3 @@ case "$CHOICE" in
  "EXIT") exit 0;;
 esac
 done
-echo "END"
