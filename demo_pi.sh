@@ -23,7 +23,7 @@ fi
 trap echo INT
 while true; do
 if [ $ADV -eq 1 ]; then
-  CHOICE=$(whiptail --title "Menu example" --menu "Choose an option" 20 0 16 \
+  CHOICE=$(whiptail --title "Demo Menu" --menu "Choose an option" 20 0 16 \
   "1" "Hello World" \
   "2" "Audio Demo" \
   "3" "Font Demo" \
@@ -36,7 +36,7 @@ if [ $ADV -eq 1 ]; then
   "EXIT" "" \
   3>&1 1>&2  2>&3)
 else
-  CHOICE=$(whiptail --title "Menu example" --menu "Choose an option" 20 0 16 \
+  CHOICE=$(whiptail --title "Demo Menu" --menu "Choose an option" 20 0 16 \
   "1" "Hello World" \
   "2" "Audio Demo" \
   "3" "Font Demo" \
